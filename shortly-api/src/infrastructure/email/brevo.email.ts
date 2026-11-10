@@ -29,7 +29,7 @@ export class BrevoEmail {
 
   async sendVerificationEmail(email: string, otp: string): Promise<boolean> {
     const payload: BrevoEmailPayload = {
-      sender: { name: 'Blogs', email: this.config.get('BREVO_SENDER', { infer: true }) },
+      sender: { name: 'Shortly', email: this.config.get('BREVO_SENDER', { infer: true }) },
       to: [{ email }],
       subject: 'Verify Your Account',
       textContent: `Dear User,
