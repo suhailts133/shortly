@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "jostSemiBold";
+  src: url("./assets/fonts/Jost-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "jostRegular";
+  src: url("./assets/fonts/Jost-Regular.ttf");
+}
+
+@theme {
+  --color-bg: #0a0a0c;
+  --color-bg-raised: #131316;
+  --color-surface: #17171b;
+  --color-surface-hover: #1f1f24;
+  --color-surface-border: #27272e;
+  --color-surface-border-strong: #38383f;
+  --color-accent: #4ade80;
+  --color-accent-hover: #6ee7a0;
+  --color-accent-active: #92f0bf;
+  --color-accent-tint: #10261b;
+  --color-accent-tint-text: #a7f3c6;
+  --color-text-primary: #f4f4f5;
+  --color-text-muted: #a1a1aa;
+  --color-text-faint: #6b6b72;
+  --color-text-on-accent: #06210f;
+  --color-success: #4ade80;
+  --color-success-tint: #10261b;
+  --color-success-text: #a7f3c6;
+  --color-error: #f87171;
+  --color-error-tint: #2a1515;
+  --color-error-text: #fca5a5;
+  --color-warning: #fbbf24;
+  --color-warning-tint: #2a2010;
+  --color-warning-text: #fde68a;
+}
+
+@theme {
+  --font-Jost-Semibold: "jostSemiBold";
+  --font-Jost-Regular: "jostRegular";
+}
+
+.auth-button {
+  @apply w-full text-text-on-accent font-Jost-Semibold py-3 rounded-sm bg-accent tracking-wide transition-colors duration-200 hover:bg-accent-hover cursor-pointer;
+}
+
+.auth-disabled-button {
+  @apply w-full text-text-faint font-Jost-Semibold py-3 rounded-sm bg-surface-border-strong tracking-wide cursor-not-allowed opacity-70 flex items-center justify-center gap-2;
+}
+
+.auth-input {
+  @apply w-full text-text-primary px-4 py-2 border border-surface-border-strong rounded-lg bg-transparent focus:outline-none focus:border-accent-active focus:ring focus:ring-surface-border-strong hover:border-accent-hover transition-all duration-300;
+}
+
+.auth-input option {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+@layer base {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--color-text-primary);
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
