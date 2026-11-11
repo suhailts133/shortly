@@ -3,6 +3,7 @@ export interface IApiResponse<T = null> {
   message: string;
   data?: T;
   statuscode: number;
+  isExisting?:boolean
 }
 
 export interface IApiResponseWithPagination<T> extends IApiResponse<T> {

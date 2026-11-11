@@ -26,7 +26,9 @@ export default function GenerateUrlForm({ onGenerated }: GenerateUrlFormProps) {
 
   const onSubmit = async ({ url }: CreateUrlDto) => {
     const result = await handleUrlGeneration(url);
-    handleResponse(result.success, "URL generated successfully", result.message);
+    const successMessage = result.isExisting ?"URL already exists":"URL generated successfully";
+    
+    handleResponse(result.success, successMessage, result.message);
 
     const generated = result.data;
     if (result.success && generated) {
