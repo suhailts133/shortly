@@ -17,7 +17,7 @@ export class UrlService implements IUrlService {
   async generateUrl(ogUrl: string): Promise<IApiResponse<string>> {
     const existing = await this.urlRepo.findByUrl(ogUrl);
     if (existing) {
-      return { message: URL_MESSAGES.ALREADY_EXISTS, data: existing.shortUrl };
+      return { message: URL_MESSAGES.ALREADY_EXISTS, data: existing.shortUrl ,isExisting:true};
     }
 
     const shortId = nanoid(8);
