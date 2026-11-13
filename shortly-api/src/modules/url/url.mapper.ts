@@ -7,6 +7,7 @@ export class UrlMapper {
     return data.map(d => ({
       date: d.createdAt.toLocaleDateString(),
       url: d.shortUrl,
+      originalUrl:d.originalUrl
     }));
   }
 }
