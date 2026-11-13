@@ -8,6 +8,7 @@ export const API_ROUTES = {
   },
   URL: {
     CREATE: "/url/",
+    MY_URLS: "/url/all",
 
   },
 } as const;
